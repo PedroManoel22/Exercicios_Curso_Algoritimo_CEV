@@ -9,6 +9,7 @@ def dias_trabalhados():
 
             if dias <= 0:
                 print('\n\033[mNão é possível colocar dias 0 ou inferiores!\033[m\n')
+                continue
             break
 
         except ValueError:
