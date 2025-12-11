@@ -6,3 +6,49 @@
 # Faça um programa que leia quantas horas de atividade uma pessoa teve por mês, 
 # calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu ganhar.
 
+def valida_horas():
+    while True:
+        try:
+            horas = int(input('\nInsira quantas horas você fez atividades físicas neste mês: '))
+            if horas <= 0:
+                print('\n\033[mColoque uma hora maior que 0!\033[m\n')
+            
+            break
+        
+        except ValueError:
+            print('\n\033[1;31mPor favor coloque uma hora válida!\033[m\n')
+        
+    return horas
+
+
+def calcula_pontos(horas):
+    if horas < 10:
+        pontos = horas * 2
+    
+    elif horas >= 10 and horas <= 20:
+        pontos = horas * 5
+    
+    else:
+        pontos = horas * 10
+    
+    return pontos
+
+
+def converte_pontos_para_dinheiro(pontos):
+    premio = pontos * 0.05
+    return premio
+
+
+def exibir_dados(horas, pontos, premio):
+    print('\n---- Resultado ----\n')
+    print(f'Horas de atividade física: {horas}h\n'
+          f'Pontos: {pontos}\n'
+          f'Premio: R${premio}\n')
+                 
+
+if __name__ == '__main__':
+    horas = valida_horas()
+    pontos = calcula_pontos(horas)
+    premio = converte_pontos_para_dinheiro(pontos)
+    exibir_dados(horas, pontos, premio)
+    
