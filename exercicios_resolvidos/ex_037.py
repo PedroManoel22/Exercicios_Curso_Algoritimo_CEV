@@ -88,6 +88,18 @@ def calcula_reajuste_salarial(salario, genero, anos):
     return reajuste, porcentagem
 
 
-def exibir_dados():
-    ...
+def exibir_dados(salario, genero, anos, reajuste, porcentagem):
+    print('\n---- Dados ----\n')
+    print(f'Salário: R${salario:.2f}\n'
+          f'Gênero: {genero}\n'
+          f'Anos trabalhados: {anos}\n'
+          f'Porcentagem do reajuste: {porcentagem}%\n'
+          f'Salário reajustado: R${reajuste:.2f}\n')  
 
+
+if __name__ == '__main__':
+    salario = valida_salario_atual()
+    genero = valida_genero_funcionario()
+    anos = valida_anos_trabalhando()
+    reajuste = calcula_reajuste_salarial(salario, genero, anos)
+    exibir_dados(salario, genero, anos, *reajuste)

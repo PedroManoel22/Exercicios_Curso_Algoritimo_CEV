@@ -5,10 +5,10 @@
 # O antecessor de 9 é 8 
 # O sucessor de 9 é 10 
 
-def valida_num():
+def valida_num_int():
     while True:
         try:
-            num = int(input('Insira um número inteiro: '))
+            num = int(input('\nInsira um número inteiro: '))
             break
 
         except ValueError:
@@ -26,7 +26,7 @@ def mostra_sucessor(num):
 
 
 if __name__ == '__main__':
-    num = valida_num()
+    num = valida_num_int()
     mostra_antecessor(num)
     mostra_sucessor(num)
     
