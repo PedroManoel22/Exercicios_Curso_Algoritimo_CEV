@@ -9,18 +9,20 @@ def sortea_um_a_cinco():
     return num 
 
 
-def advinhacao_usuario():
+def advinhacao_usuario(qtd):
     from time import sleep
-    numeros = [x for x in range(1, 6)]
+    numeros = [x for x in range(1, qtd + 1)]
+    primeiro_num = numeros[0]
+    ultimo_num = numeros[-1]
 
-    print('\nEstou pensando em um número de 1 a 5 .....\n')
+    print(f'\nEstou pensando em um número de {primeiro_num} a {ultimo_num} .....\n')
     sleep(2)
 
     while True:
         try:
             resposta = int(input('Tente adivinhar o número que pensei: '))
             if resposta not in numeros:
-                print('\n\033[1;33mPor favor coloque um número inteiro entre 1 e 5!\033[m\n')
+                print(f'\n\033[1;33mPor favor coloque um número inteiro entre {primeiro_num} e {ultimo_num}!\033[m\n')
                 continue
 
             break
@@ -33,8 +35,21 @@ def advinhacao_usuario():
 
 def resultado(num_computador, num_usuario):
     if num_computador == num_usuario:
-        resposta = '\033[1;32mAcertou!\033[m'
+        return True
         
+    else:
+        return False
+        
+
+    
+
+if __name__ == '__main__':
+    num_computador = sortea_um_a_cinco()
+    num_usuario = advinhacao_usuario(5)
+    r = resultado(num_computador, num_usuario)
+    if r:
+        resposta = '\033[1;32mAcertou!\033[m'
+    
     else:
         resposta = '\033[1;31mErrou!\033[m'
 
@@ -42,8 +57,3 @@ def resultado(num_computador, num_usuario):
           f'Número que você me mandou: {num_usuario}\n'
           f'Resposta: {resposta}\n')
 
-
-if __name__ == '__main__':
-    num_computador = sortea_um_a_cinco()
-    num_usuario = advinhacao_usuario()
-    resultado(num_computador, num_usuario)

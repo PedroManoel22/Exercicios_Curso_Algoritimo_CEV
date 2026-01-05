@@ -3,6 +3,7 @@
 # indivíduo dentro de certas faixas. - abaixo de 18.5: Abaixo do peso - entre 18.5 e 25: Peso ideal - entre 25 e 30: Sobrepeso - entre 30 e 40: Obesidade - acima de 40: Obseidade mórbida 
 # Obs: O IMC é calculado pela expressão peso/altura² (peso dividido pelo quadrado 
 # da altura) 
+# A maior altura já registrada foi de 2,72 até 2025 por Robert Wadlow., então vamos considerar esta a altura maxima 
 
 def valida_peso():
     while True:
@@ -25,9 +26,13 @@ def valida_altura():
         try:
             altura = float(input('Insira a sua altura: '))
             if altura <= 0:
-                print('\n033[1;31mPor favor coloque uma valor maior que 0')
+                print('\n\033[1;31mPor favor coloque uma valor maior que 0\033[m\n')
                 continue
 
+            if altura > 2.72:
+                print('\n\033[1;31mPor favor coloque uma altura menor que 2.72m\033[m\n')
+                continue
+            
             break
 
         except ValueError:
