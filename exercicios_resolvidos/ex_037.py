@@ -26,19 +26,19 @@ def valida_salario_atual():
     return salario
 
 
-def valida_genero_funcionario():
-    generos = ['F', 'M']
+def valida_sexo():
+    sexos = ['F', 'M']
 
     while True:
-        genero = input('Insira seu gênero, [F/M]: ').upper().strip()
+        sexo = input('Insira seu gênero, [F/M]: ').upper().strip()
 
-        if genero not in generos:
+        if sexo not in sexos:
             print('\n\033[1;31mPor favor coloque um gênero F ou M\033[m\n')
             continue
 
         break
 
-    return genero
+    return sexo
             
 
 def valida_anos_trabalhando():
@@ -99,7 +99,7 @@ def exibir_dados(salario, genero, anos, reajuste, porcentagem):
 
 if __name__ == '__main__':
     salario = valida_salario_atual()
-    genero = valida_genero_funcionario()
+    genero = valida_sexo()
     anos = valida_anos_trabalhando()
     reajuste = calcula_reajuste_salarial(salario, genero, anos)
     exibir_dados(salario, genero, anos, *reajuste)

@@ -30,7 +30,6 @@ def mostrar_dados(nums, pares,qtd_pares, impares, qtd_impares):
           f'Ímpares: {impares}, quantidade = {qtd_impares}\n')
 
 
-
 if __name__ == '__main__':
     nums = ler_nums_int(6)
     pares = e_par(nums)
