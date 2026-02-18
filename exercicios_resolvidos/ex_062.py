@@ -32,5 +32,5 @@ pessoas_21_ou_mais = len(list(pessoas_21_ou_mais))
 
 print('\n---- Dados ----\n')
 print(f'Quatidade de pessoas: {qtd_pessoas}\n'
-      f'Média de idade: {media_idade}\n'
+      f'Média de idade: {media_idade:.2f}\n'
       f'Pessoas com 21 anos ou mais: {pessoas_21_ou_mais}\n')
