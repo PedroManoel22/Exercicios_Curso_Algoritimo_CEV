@@ -24,7 +24,7 @@ def valida_nome():
     return nome
 
 
-def escreve_msg(nome):
+def escreve_msg(nome: str) -> str:
     return f"Olá {nome}, é um prazer te conhecer!"
 
 
