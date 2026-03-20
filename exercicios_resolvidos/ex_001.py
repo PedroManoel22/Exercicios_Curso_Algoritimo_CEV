@@ -1,3 +1,3 @@
-# 1) Escreva um programa que mostre na tela a mensagem "Olá, Mundo!" 
+# 1) Escreva um programa que mostre na tela a mensagem "Olá, Mundo!"
 
-input('Olá, Mundo!')
+input("Olá, Mundo!")
