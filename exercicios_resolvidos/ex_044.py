@@ -1,69 +1,72 @@
-# 44) Crie um algoritmo que leia o valor inicial da contagem, o valor final e o 
-# incremento, mostrando em seguida todos os valores no intervalo: 
-# Ex: Digite o primeiro Valor: 3 
-# Digite o último Valor: 10 
-# Digite o incremento: 2 
-# Contagem: 3 5 7 9 Acabou! 
+# 44) Crie um algoritmo que leia o valor inicial da contagem, o valor final e o
+# incremento, mostrando em seguida todos os valores no intervalo:
+# Ex: Digite o primeiro Valor: 3
+# Digite o último Valor: 10
+# Digite o incremento: 2
+# Contagem: 3 5 7 9 Acabou!
 
-def valida_valor_inicial():
+
+def valida_valor_inicial() -> int:
     print()
     while True:
         try:
-            valor = int(input('Digite o primeiro valor: '))
+            valor = int(input("Digite o primeiro valor: "))
             return valor
-        
-        except ValueError:
-            print('\n\033[1;31mPor favor coloque um número inteiro!\033[m\n')
-        
-        except Exception as e:
-            print(f'\n\033[1;31mErro inesperado!, {e.__class__.__name__}\033[m\n')
-        
 
-def valida_valor_final():
+        except ValueError:
+            print("\n\033[1;31mPor favor coloque um número inteiro!\033[m\n")
+
+        except Exception as e:
+            print(f"\n\033[1;31mErro inesperado!, {e.__class__.__name__}\033[m\n")
+
+
+def valida_valor_final() -> int:
     print()
     while True:
         try:
-            valor = int(input('Digite o último valor: '))
+            valor = int(input("Digite o último valor: "))
             return valor
-        
-        except ValueError:
-            print('\n\033[1;31mPor favor coloque um número inteiro!\033[m\n')
-        
-        except Exception as e:
-            print(f'\n\033[1;31mErro inesperado!, {e.__class__.__name__}\033[m\n')
-        
 
-def valida_valor_incremento():
+        except ValueError:
+            print("\n\033[1;31mPor favor coloque um número inteiro!\033[m\n")
+
+        except Exception as e:
+            print(f"\n\033[1;31mErro inesperado!, {e.__class__.__name__}\033[m\n")
+
+
+def valida_valor_incremento() -> int:
     print()
     while True:
         try:
-            valor = int(input('Digite o incremento: '))
+            valor = int(input("Digite o incremento: "))
             return valor
-        
+
         except ValueError:
-            print('\n\033[1;31mPor favor coloque um número inteiro!\033[m\n')
-        
+            print("\n\033[1;31mPor favor coloque um número inteiro!\033[m\n")
+
         except Exception as e:
-            print(f'\n\033[1;31mErro inesperado!, {e.__class__.__name__}\033[m\n')
+            print(f"\n\033[1;31mErro inesperado!, {e.__class__.__name__}\033[m\n")
 
 
-def fazer_contagem(inicio, fim, incremento):
+def fazer_contagem(inicio: int, fim: int, incremento: int):
     if inicio > fim:
-        print('\n\033[1;33mComo o inicio é maior que o fim, o incremento deve ser negativo, pode deixar comigo que já coloquei como negativo!\033[m\n')
+        print(
+            "\n\033[1;33mComo o inicio é maior que o fim, o incremento deve ser negativo, pode deixar comigo que já coloquei como negativo!\033[m\n"
+        )
         incremento = -incremento
 
         print()
         for i in range(inicio, fim - 1, incremento):
-            print(f'{i} ', end='')
+            print(f"{i} ", end="")
     else:
         print()
         for i in range(inicio, fim + 1, incremento):
-                print(f'{i} ', end='')
-        
-    print('Acabou!\n')
+            print(f"{i} ", end="")
+
+    print("Acabou!\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     inicio = valida_valor_inicial()
     fim = valida_valor_final()
     incremento = valida_valor_incremento()

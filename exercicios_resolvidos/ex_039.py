@@ -1,10 +1,10 @@
-# 39) Faça um algoritmo que mostre na tela a seguinte contagem: 
-# 10 9 8 7 6 5 4 3 Acabou! 
+# 39) Faça um algoritmo que mostre na tela a seguinte contagem:
+# 10 9 8 7 6 5 4 3 Acabou!
 
-nums = [x for x in range(10, 2, -1)] 
+nums = [x for x in range(10, 2, -1)]
 
 print()
 for num in nums:
-    print(f'{num} ', end='')
+    print(f"{num} ", end="")
 
-print('Acabou!\n')
+print("Acabou!\n")
